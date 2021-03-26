@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 public class LoginPage {
     private final static SelenideElement
@@ -28,7 +30,9 @@ public class LoginPage {
         return page(ProfilePage.class);
     }
 
-    public String getError() {
-        return errorMessage.getText();
+    public LoginPage hasError(String error) {
+        assertThat(errorMessage.getText(), is(error));
+
+        return this;
     }
 }
