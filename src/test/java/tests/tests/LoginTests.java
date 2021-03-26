@@ -12,14 +12,14 @@ public class LoginTests extends TestBase {
     @Test
     void unsuccessfulLoginTest() {
         open("/login", LoginPage.class)
-                .unsuccessfulLogin(BAD_LOGIN,PASSWORD)
+                .unsuccessfulLogin(BAD_LOGIN, PASSWORD)
                 .hasError("Invalid username or password!");
     }
 
     @Test
     void successfulLoginTest() {
         open("/login", LoginPage.class)
-                .login(LOGIN,PASSWORD)
+                .login(LOGIN, PASSWORD)
                 .isLoggedIn()
                 .logout();
     }

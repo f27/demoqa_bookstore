@@ -20,7 +20,7 @@ public class ProfileTests extends TestBase {
     @Test
     void authorizedCanGoToStore() {
         open("/login", LoginPage.class)
-                .login(LOGIN,PASSWORD)
+                .login(LOGIN, PASSWORD)
                 .isLoggedIn()
                 .gotoStore()
                 .hasSearchBox();
