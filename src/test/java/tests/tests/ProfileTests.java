@@ -14,15 +14,15 @@ public class ProfileTests extends TestBase {
     @Test
     void unauthorizedProfileHasRegisterLink() {
         open("/profile", ProfilePage.class)
-                .hasRegisterLink();
+                .shouldHaveRegisterLink();
     }
 
     @Test
     void authorizedCanGoToStore() {
         open("/login", LoginPage.class)
                 .login(LOGIN, PASSWORD)
-                .isLoggedIn()
+                .verifyLoggedIn()
                 .gotoStore()
-                .hasSearchBox();
+                .shouldHaveSearchBox();
     }
 }

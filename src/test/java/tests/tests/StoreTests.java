@@ -13,16 +13,16 @@ public class StoreTests extends TestBase {
     @Test
     void searchByExistingAuthorTest() {
         open("/books", StorePage.class)
-                .hasSearchBox()
+                .shouldHaveSearchBox()
                 .search(BOOK_AUTHOR)
-                .foundBook(BOOK_TITLE);
+                .shouldFind(BOOK_TITLE);
     }
 
     @Test
     void searchNotExistingBook() {
         open("/books", StorePage.class)
-                .hasSearchBox()
+                .shouldHaveSearchBox()
                 .search(BOOK_AUTHOR + BOOK_AUTHOR)
-                .noBooksFound();
+                .shouldNotFind();
     }
 }

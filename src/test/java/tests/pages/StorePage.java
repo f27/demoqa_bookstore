@@ -12,7 +12,7 @@ public class StorePage {
             booksWrapper = $(".books-wrapper"),
             noData = $(".rt-noData");
 
-    public StorePage hasSearchBox() {
+    public StorePage shouldHaveSearchBox() {
         searchBox.shouldBe(visible);
 
         return this;
@@ -24,14 +24,14 @@ public class StorePage {
         return this;
     }
 
-    public StorePage foundBook(String text) {
+    public StorePage shouldFind(String text) {
         noData.shouldNotBe(visible);
         booksWrapper.shouldHave(text(text));
 
         return this;
     }
 
-    public StorePage noBooksFound() {
+    public StorePage shouldNotFind() {
         noData.shouldHave(text("No rows found"));
 
         return this;

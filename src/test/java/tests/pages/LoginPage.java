@@ -30,7 +30,7 @@ public class LoginPage {
         return page(ProfilePage.class);
     }
 
-    public LoginPage hasError(String error) {
+    public LoginPage shouldHaveError(String error) {
         assertThat(errorMessage.getText(), is(error));
 
         return this;

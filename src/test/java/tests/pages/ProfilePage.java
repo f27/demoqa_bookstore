@@ -29,13 +29,13 @@ public class ProfilePage {
         return username.getText();
     }
 
-    public ProfilePage isLoggedIn() {
+    public ProfilePage verifyLoggedIn() {
         assertThat(getUsername(), is(LOGIN));
 
         return this;
     }
 
-    public ProfilePage hasRegisterLink() {
+    public ProfilePage shouldHaveRegisterLink() {
         notLoggedInLabel.$(byLinkText("register")).shouldBe(visible);
 
         return this;
